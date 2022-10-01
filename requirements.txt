@@ -1,0 +1,5 @@
+requests
+regex
+bs4
+pyTelegramBotAPI
+aiogram
