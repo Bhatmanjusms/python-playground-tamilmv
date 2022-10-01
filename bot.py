@@ -21,6 +21,7 @@ def random_answer(message):
 
 @dp.message_handler(commands=['view'])
 def random_value(message):
+        bot.send_message(chat_id=message.chat.id,text="*Wait for 10 seconds*",parse_mode='Markdown')
         ml = tamilmv()
         for i in ml:
             bot.send_message(chat_id=message.chat.id,text=i,parse_mode='Markdown')
