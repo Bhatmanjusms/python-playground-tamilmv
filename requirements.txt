@@ -3,3 +3,4 @@ regex
 bs4
 pyTelegramBotAPI
 aiogram
+lxml
