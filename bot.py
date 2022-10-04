@@ -4,7 +4,6 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import telebot
-from urllib.parse import unquote
 
 bot = Bot(token="5506422969:AAEkz2RyxOHiN7ir0poytlepyRvQYpsdQ0E")
 dp = Dispatcher(bot)
@@ -72,7 +71,7 @@ def tamilmv():
                     titles.append(title.find('span', attrs={'style':'color:#0000ff;'}).text)
 
         for l in range(0,len(mag)-1):
-            mainlink.append(f"*{titles[l][20:-8]}* -->      🧲 `{unquote(mag[l])}`                              🗒️->[Torrent file]({filelink[l]})")
+            mainlink.append(f"*{titles[l][20:-8]}* -->      🧲 `{mag[l]}`                              🗒️->[Torrent file]({filelink[l]})")
             # print(f"{titles[i][:-8]} -->  {mag[i]}")
             
     return mainlink
