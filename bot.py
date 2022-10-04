@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import telebot
+import send
 
 bot = Bot(token="5613970727:AAFvGY33k5mSXZ1IXnDCUG_pJjXTfo0oixM")
 dp = Dispatcher(bot)
@@ -15,14 +16,16 @@ keybord_inline = InlineKeyboardMarkup().add(button, button1)
 
 @dp.message_handler(commands=['start'])
 def random_answer(message):
-   bot.send_message(chat_id=message.chat.id,text='*please Enter /view command*',parse_mode='Markdown')
+    send.send(-1001850194136,f"{message.from_user.username} has started the bot 🤖")
+    bot.send_message(chat_id=message.chat.id,text='*please Enter /view command*',parse_mode='Markdown')
 
 @dp.message_handler(commands=['view'])
 def random_value(message):
-        bot.send_message(chat_id=message.chat.id,text="*Wait for 10 seconds*",parse_mode='Markdown')
-        ml = tamilmv()
-        for i in ml:
-            bot.send_message(chat_id=message.chat.id,text=i,parse_mode='Markdown')
+    send.send(-1001850194136,f"{message.from_user.username} has clicked view 👀")
+    bot.send_message(chat_id=message.chat.id,text="*Wait for 10 seconds*",parse_mode='Markdown')
+    ml = tamilmv()
+    for i in ml:
+        bot.send_message(chat_id=message.chat.id,text=i,parse_mode='Markdown')
 
 def tamilmv():
 
