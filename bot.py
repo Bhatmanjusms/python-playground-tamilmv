@@ -13,7 +13,7 @@ button = InlineKeyboardButton(text="View ", callback_data="view_web")
 button1 = InlineKeyboardButton(text="Refresh", callback_data="randomvalue_of100")
 keybord_inline = InlineKeyboardMarkup().add(button, button1)
 
-
+tracker = '&tr=udp://tracker.openbittorrent.com:80/announce&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://tracker.trackerfix.com:81/announce&tr=udp://9.rarbg.me:2730/announce&tr=udp://9.rarbg.to:2730/announce&tr=udp://tracker.fatkhoala.org:13760/announce&tr=udp://tracker.slowcheetah.org:14800/announce&tr=http://tracker.opentrackr.org:1337/announce&tr=udp://tracker.tiny-vps.com:6969/announce'
 
 @dp.message_handler(commands=['start'])
 def random_answer(message):
@@ -70,7 +70,7 @@ def tamilmv():
                     titles.append(title.find('span', attrs={'style':'color:#0000ff;'}).text)
 
         for l in range(0,len(mag)-1):
-            mainlink.append(f"*{titles[l][20:-8]}* -->      🧲 `{mag[l]}`                                🗒️->[Torrent file]({filelink[l]})")
+            mainlink.append(f"*{titles[l][20:-8]}* -->      🧲 `{mag[l]}{tracker}`                                🗒️->[Torrent file]({filelink[l]})")
             # print(f"{titles[i][:-8]} -->  {mag[i]}")
             
     return mainlink
