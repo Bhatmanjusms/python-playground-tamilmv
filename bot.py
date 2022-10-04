@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import telebot
+from urllib.parse import unquote
 
 bot = Bot(token="5506422969:AAEkz2RyxOHiN7ir0poytlepyRvQYpsdQ0E")
 dp = Dispatcher(bot)
@@ -12,8 +13,6 @@ bot = telebot.TeleBot('5506422969:AAEkz2RyxOHiN7ir0poytlepyRvQYpsdQ0E')
 button = InlineKeyboardButton(text="View ", callback_data="view_web")
 button1 = InlineKeyboardButton(text="Refresh", callback_data="randomvalue_of100")
 keybord_inline = InlineKeyboardMarkup().add(button, button1)
-
-tracker = '&tr=udp://tracker.openbittorrent.com:80/announce&tr=udp://tracker.opentrackr.org:1337/announce&tr=udp://tracker.trackerfix.com:81/announce&tr=udp://9.rarbg.me:2730/announce&tr=udp://9.rarbg.to:2730/announce&tr=udp://tracker.fatkhoala.org:13760/announce&tr=udp://tracker.slowcheetah.org:14800/announce&tr=http://tracker.opentrackr.org:1337/announce&tr=udp://tracker.tiny-vps.com:6969/announce'
 
 @dp.message_handler(commands=['start'])
 def random_answer(message):
@@ -57,7 +56,10 @@ def tamilmv():
         bigtitle = soup.find_all('a')
         titles = []
         filelink = []
-        mag = pattern.findall(str(bigtitle))
+        mag = []
+        for i in soup.find_all('a', href=True):
+            if i['href'].startswith('magnet'):
+                mag.append(i['href'])
         for a in soup.findAll('a',{"data-fileext":"torrent",'href':True}):
             filelink.append(a['href'])
 
@@ -70,7 +72,7 @@ def tamilmv():
                     titles.append(title.find('span', attrs={'style':'color:#0000ff;'}).text)
 
         for l in range(0,len(mag)-1):
-            mainlink.append(f"*{titles[l][20:-8]}* -->      🧲 `{mag[l]}{tracker}`                                🗒️->[Torrent file]({filelink[l]})")
+            mainlink.append(f"*{titles[l][20:-8]}* -->      🧲 `{unquote(mag[l])}`                              🗒️->[Torrent file]({filelink[l]})")
             # print(f"{titles[i][:-8]} -->  {mag[i]}")
             
     return mainlink
