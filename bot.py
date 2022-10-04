@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup
 import re
 import telebot
 
-bot = Bot(token="5506422969:AAEkz2RyxOHiN7ir0poytlepyRvQYpsdQ0E")
+bot = Bot(token="5613970727:AAFvGY33k5mSXZ1IXnDCUG_pJjXTfo0oixM")
 dp = Dispatcher(bot)
-bot = telebot.TeleBot('5506422969:AAEkz2RyxOHiN7ir0poytlepyRvQYpsdQ0E')
+bot = telebot.TeleBot('5613970727:AAFvGY33k5mSXZ1IXnDCUG_pJjXTfo0oixM')
 
 button = InlineKeyboardButton(text="View ", callback_data="view_web")
 button1 = InlineKeyboardButton(text="Refresh", callback_data="randomvalue_of100")
