@@ -11,8 +11,7 @@ updater = Updater('5613970727:AAFvGY33k5mSXZ1IXnDCUG_pJjXTfo0oixM',use_context=T
 dispatcher = updater.dispatcher
 
 
-movieName = 'heelo'
 
-def send(api,chatId,textMessage):
+def send(chatId,textMessage):
     bot = telegram.Bot(token=api)
     bot.sendMessage(chat_id=chatId,text=textMessage)

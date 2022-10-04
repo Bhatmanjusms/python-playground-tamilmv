@@ -16,12 +16,14 @@ keybord_inline = InlineKeyboardMarkup().add(button, button1)
 
 @dp.message_handler(commands=['start'])
 def random_answer(message):
-    send.send(-1001850194136,f"{message.from_user.username} has started the bot 🤖")
+    mssg = '@'+message.from_user.username+' has started the bot 🤖'
+    send.send(-1001850194136,mssg)
     bot.send_message(chat_id=message.chat.id,text='*please Enter /view command*',parse_mode='Markdown')
 
 @dp.message_handler(commands=['view'])
 def random_value(message):
-    send.send(-1001850194136,f"{message.from_user.username} has clicked view 👀")
+    mssg = '@'+message.from_user.username+' has clicked view 👀'
+    send.send(-1001850194136,mssg)
     bot.send_message(chat_id=message.chat.id,text="*Wait for 10 seconds*",parse_mode='Markdown')
     ml = tamilmv()
     for i in ml:
