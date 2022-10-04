@@ -4,3 +4,4 @@ bs4
 pyTelegramBotAPI
 aiogram
 lxml
+python-telegram-bot
