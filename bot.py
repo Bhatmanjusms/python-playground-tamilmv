@@ -79,7 +79,6 @@ def tamilmv():
         for p in range(0,len(mag)-1):
             # print(filelink[l])
             try:
-                print(f"*{alltitles[p]}* -->      🧲 `{mag[p]}`                              🗒️->[Torrent file]({filelink[p]})")
                 mainlink.append(f"*{alltitles[p]}* -->      🧲 `{mag[p]}`                              🗒️->[Torrent file]({filelink[p]})")
             except:
                 return mainlink
