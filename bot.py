@@ -58,25 +58,31 @@ def tamilmv():
         soup = BeautifulSoup(html.text,'lxml')
         pattern=re.compile(r"magnet:\?xt=urn:[a-z0-9]+:[a-zA-Z0-9]{40}")
         bigtitle = soup.find_all('a')
-        titles = []
+        alltitles = []
         filelink = []
         mag = []
         for i in soup.find_all('a', href=True):
             if i['href'].startswith('magnet'):
                 mag.append(i['href'])
+
         for a in soup.findAll('a',{"data-fileext":"torrent",'href':True}):
             filelink.append(a['href'])
 
         for title in bigtitle:
-            if title.find('span', attrs={'style':'color:#0000ff;'}) == None:  
-                if title.find('span', attrs={'style':'color:#3333ff;'}) != None:
-                    titles.append(title.find('span', attrs={'style':'color:#3333ff;'}).text)
+            if title.find('span') == None:
+                pass
             else:
-                if title.find('span', attrs={'style':'color:#0000ff;'}) != None:
-                    titles.append(title.find('span', attrs={'style':'color:#0000ff;'}).text)
+                if title.find('span').text.endswith('torrent'):
+                    alltitles.append(title.find('span').text[20:-8])
 
-        for l in range(0,len(mag)-1):
-            mainlink.append(f"*{titles[l][20:-8]}* -->      🧲 `{mag[l]}`                              🗒️->[Torrent file]({filelink[l]})")
+        print(alltitles)
+        for p in range(0,len(mag)-1):
+            # print(filelink[l])
+            try:
+                print(f"*{alltitles[p]}* -->      🧲 `{mag[p]}`                              🗒️->[Torrent file]({filelink[p]})")
+                mainlink.append(f"*{alltitles[p]}* -->      🧲 `{mag[p]}`                              🗒️->[Torrent file]({filelink[p]})")
+            except:
+                return mainlink
             # print(f"{titles[i][:-8]} -->  {mag[i]}")
             
     return mainlink
