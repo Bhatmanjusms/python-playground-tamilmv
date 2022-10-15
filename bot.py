@@ -12,18 +12,20 @@ bot = telebot.TeleBot('5613970727:AAFvGY33k5mSXZ1IXnDCUG_pJjXTfo0oixM')
 
 button = InlineKeyboardButton(text="View", callback_data="view_web")
 button1 = InlineKeyboardButton(text="Refresh", callback_data="randomvalue_of100")
-keybord_inline = InlineKeyboardMarkup().add(button, button1)
+buttons = [[
+
+            InlineKeyboardButton('𖣘 𝗠𝗢𝗩𝗜𝗘𝗦 𝗚𝗥𝗢𝗨𝗣 𖣘', url='https://t.me/new_movies_group_2021')
+
+         ]]
+keybord_inline = InlineKeyboardMarkup().add(buttons)
+
 
 @dp.message_handler(commands=['start'])
 def random_answer(message):
     mssg = '@'+message.from_user.username+' has started the bot 🤖'
     send.send(-1001850194136,mssg)
-    bot.send_message(chat_id=message.chat.id,text='coded by *shinas101*\nPowered by [*Shanid TG*](https://t.me/heyboy2004)\n\n*please Enter /view command*',parse_mode='Markdown')
-    buttons = [[
-
-            InlineKeyboardButton('𖣘 𝗠𝗢𝗩𝗜𝗘𝗦 𝗚𝗥𝗢𝗨𝗣 𖣘', url='https://t.me/new_movies_group_2021')
-
-         ]]
+    bot.send_message(chat_id=message.chat.id,text='coded by *shinas101*\nPowered by [Shanid TG](https://t.me/heyboy2004)\n\n*please Enter /view command*',parse_mode='Markdown')
+    bot.send_message(chat_id=message.chst.id,text='hey',reply_markup=keyboard_inline)
 
 
 
@@ -35,7 +37,7 @@ def random_answer(message):
 
 
 
-            reply_markup=InlineKeyboardMarkup(buttons),
+
 
 
 
@@ -56,7 +58,7 @@ def tamilmv():
 
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'accept-language': 'en-G-US;q=0.9,en;q=0.8',
         'Connection':'Keep-alive',
         }
 
