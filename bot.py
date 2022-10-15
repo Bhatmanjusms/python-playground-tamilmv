@@ -17,7 +17,7 @@ keyboard = telebot.types.InlineKeyboardMarkup().add(telebot.types.InlineKeyboard
 
 @dp.message_handler(commands=['start'])
 def random_answer(message):
-    if message.from_user.username == none:
+    if type(message.from_user.username) == none:
          mssg = '@'+message.chat.first_name+' has started the bot 🤖'
     else:
         mssg = '@'+message.from_user.username+' has started the bot 🤖'
@@ -26,7 +26,7 @@ def random_answer(message):
             
 @dp.message_handler(commands=['view'])
 def random_value(message):
-    if message.from_user.username == none:    
+    if type(message.from_user.username) == none:    
         mssg = '@'+message.chat.first_name+' has clicked view 👀'
     else:
         mssg = '@'+message.from_user.username+' has clicked view 👀'
