@@ -17,7 +17,7 @@ buttons = [[
             InlineKeyboardButton('𖣘 𝗠𝗢𝗩𝗜𝗘𝗦 𝗚𝗥𝗢𝗨𝗣 𖣘', url='https://t.me/new_movies_group_2021')
 
          ]]
-keybord_inline = InlineKeyboardMarkup().add(buttons)
+keybord_inline = ReplyKeyboardMarkup().add(buttons)
 
 
 @dp.message_handler(commands=['start'])
