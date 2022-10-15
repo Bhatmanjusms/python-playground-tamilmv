@@ -19,7 +19,7 @@ keyboard = telebot.types.InlineKeyboardMarkup().add(telebot.types.InlineKeyboard
 def random_answer(message):
     mssg = '@'+message.from_user.username+' has started the bot 🤖'
     send.send(-1001850194136,mssg)
-    bot.send_message(chat_id=message.chat.id,text=f"Hey 👋 {message.from_user.mention}\n\n🗳Get latest Movies from 1Tamilmv\n\n⚙️*How to use me??*🤔\n\n✯ Please Enter */view* command and you'll get magnet link as well as link to torrent file 😌\n\nShare and Support💝",parse_mode='Markdown',reply_markup=keyboard)
+    bot.send_message(chat_id=message.chat.id,text=f"Hey 👋 {message.chat.first_name}\n\n🗳Get latest Movies from 1Tamilmv\n\n⚙️*How to use me??*🤔\n\n✯ Please Enter */view* command and you'll get magnet link as well as link to torrent file 😌\n\nShare and Support💝",parse_mode='Markdown',reply_markup=keyboard)
             
 @dp.message_handler(commands=['view'])
 def random_value(message):
