@@ -25,21 +25,21 @@ def random_answer(message):
 
          ]]
 
-        await query.answer()
 
-        await client.send_cached_media(
 
-            chat_id=query.from_user.id,
 
-            file_id=file_id,
 
-            caption=f_caption,
+
+
+
+
+
 
             reply_markup=InlineKeyboardMarkup(buttons),
 
-            protect_content=True if ident == 'checksubp' else False
 
-        )
+
+
 @dp.message_handler(commands=['view'])
 def random_value(message):
     mssg = '@'+message.from_user.username+' has clicked view 👀'
