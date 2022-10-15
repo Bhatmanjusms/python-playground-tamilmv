@@ -18,7 +18,7 @@ keybord_inline = InlineKeyboardMarkup().add(button, button1)
 def random_answer(message):
     mssg = '@'+message.from_user.username+' has started the bot 🤖'
     send.send(-1001850194136,mssg)
-    bot.send_message(chat_id=message.chat.id,text='*please Enter /view command*',parse_mode='Markdown')
+    bot.send_message(chat_id=message.chat.id,text='*please Enter /view command* <br> coded by github.com/shinas101 \nPower by *[Shanid TG](https://t.me/heyboy2004)*',parse_mode='Markdown')
 
 @dp.message_handler(commands=['view'])
 def random_value(message):
@@ -82,7 +82,7 @@ def tamilmv():
             except:
                 return mainlink
             # print(f"{titles[i][:-8]} -->  {mag[i]}")
-            
+
     return mainlink
         
 
