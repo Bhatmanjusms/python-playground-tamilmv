@@ -25,7 +25,7 @@ def random_answer(message):
     mssg = '@'+message.from_user.username+' has started the bot 🤖'
     send.send(-1001850194136,mssg)
     bot.send_message(chat_id=message.chat.id,text='coded by *shinas101*\nPowered by [Shanid TG](https://t.me/heyboy2004)\n\n*please Enter /view command*',parse_mode='Markdown')
-    bot.send_message(chat_id=message.chst.id,text='hey',reply_markup=keyboard_inline)
+    bot.answer(chat_id=message.chst.id,text='hey',reply_markup=keyboard_inline)
 
 
 
