@@ -19,7 +19,27 @@ def random_answer(message):
     mssg = '@'+message.from_user.username+' has started the bot 🤖'
     send.send(-1001850194136,mssg)
     bot.send_message(chat_id=message.chat.id,text='coded by *shinas101*\nPowered by [*Shanid TG*](https://t.me/heyboy2004)\n\n*please Enter /view command*',parse_mode='Markdown')
+    buttons = [[
 
+            InlineKeyboardButton('𖣘 𝗠𝗢𝗩𝗜𝗘𝗦 𝗚𝗥𝗢𝗨𝗣 𖣘', url='https://t.me/new_movies_group_2021')
+
+         ]]
+
+        await query.answer()
+
+        await client.send_cached_media(
+
+            chat_id=query.from_user.id,
+
+            file_id=file_id,
+
+            caption=f_caption,
+
+            reply_markup=InlineKeyboardMarkup(buttons),
+
+            protect_content=True if ident == 'checksubp' else False
+
+        )
 @dp.message_handler(commands=['view'])
 def random_value(message):
     mssg = '@'+message.from_user.username+' has clicked view 👀'
