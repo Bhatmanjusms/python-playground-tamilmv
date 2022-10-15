@@ -11,9 +11,9 @@ dp = Dispatcher(bot)
 bot = telebot.TeleBot('5613970727:AAFvGY33k5mSXZ1IXnDCUG_pJjXTfo0oixM')
 
 
-button1 = telebot.types.InlineKeyboardButton(text="Powered by ",url='https://t.me/heyboy2004')
+button1 = telebot.types.InlineKeyboardButton(text="⚡Powered by ",url='https://t.me/heyboy2004')
 
-keyboard = telebot.types.InlineKeyboardMarkup().add(telebot.types.InlineKeyboardButton('Developed by', url='github.com/shinas101')).add(button1)
+keyboard = telebot.types.InlineKeyboardMarkup().add(telebot.types.InlineKeyboardButton('👨‍💻 Developed by', url='github.com/shinas101')).add(button1)
 
 @dp.message_handler(commands=['start'])
 def random_answer(message):
