@@ -10,38 +10,16 @@ bot = Bot(token="5613970727:AAFvGY33k5mSXZ1IXnDCUG_pJjXTfo0oixM")
 dp = Dispatcher(bot)
 bot = telebot.TeleBot('5613970727:AAFvGY33k5mSXZ1IXnDCUG_pJjXTfo0oixM')
 
-button = InlineKeyboardButton(text="View", callback_data="view_web")
+button = InlineKeyboardButton(text="Owner", callback_data="view_web")
 button1 = InlineKeyboardButton(text="Refresh", callback_data="randomvalue_of100")
-buttons = [[
-
-            InlineKeyboardButton('𖣘 𝗠𝗢𝗩𝗜𝗘𝗦 𝗚𝗥𝗢𝗨𝗣 𖣘', url='https://t.me/new_movies_group_2021')
-
-         ]]
-keybord_inline = ReplyKeyboardMarkup().add(buttons)
-
+keyboard = telebot.types.InlineKeyboardMarkup().add(button)
 
 @dp.message_handler(commands=['start'])
 def random_answer(message):
     mssg = '@'+message.from_user.username+' has started the bot 🤖'
     send.send(-1001850194136,mssg)
-    bot.send_message(chat_id=message.chat.id,text='coded by *shinas101*\nPowered by [Shanid TG](https://t.me/heyboy2004)\n\n*please Enter /view command*',parse_mode='Markdown')
-    bot.answer(chat_id=message.chst.id,text='hey',reply_markup=keyboard_inline)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    bot.send_message(chat_id=message.chat.id,text='coded by *shinas101*\nPowered by [Shanid TG](https://t.me/heyboy2004)\n\n*please Enter /view command*',parse_mode='Markdown',reply_markup=keyboard)
+            
 @dp.message_handler(commands=['view'])
 def random_value(message):
     mssg = '@'+message.from_user.username+' has clicked view 👀'
