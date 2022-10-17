@@ -34,7 +34,7 @@ def random_value(message):
     bot.send_message(message.chat.id,text="*Please wait for 10 seconds*",parse_mode='Markdown')
     ml = tamilmv()
     for i in ml:
-        bot.send_message(chat_id=message.chat.id,text=f"{i}\n🤖 @Tamilmv\_movie\_bot",parse_mode='Markdown')
+        bot.send_message(chat_id=message.chat.id,text=f"{i}\n\n🤖 @Tamilmv\_movie\_bot",parse_mode='Markdown')
 
 @dp.message_handler(commands=['help'])
 def help_command(message):
