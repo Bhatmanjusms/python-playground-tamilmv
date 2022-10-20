@@ -57,7 +57,7 @@ def makeKeyboard():
     return markup
 
 def tamilmv():
-    mainUrl = 'https://www.1tamilmv.hair/'
+    mainUrl = 'https://www.1tamilmv.cfd/'
     mainlink = []
 
     headers = {
