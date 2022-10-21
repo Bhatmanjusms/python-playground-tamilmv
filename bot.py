@@ -83,9 +83,9 @@ def tamilmv():
 
     num = 0
 
-    temps = soup.find_all('span',{'class' : 'ipsType_break ipsContained'})
+    temps = soup.find_all('div',{'class' : 'ipsType_break ipsContained'})
 
-    for i in range(15):
+    for i in range(22):
         title = temps[i].findAll('a')[0].text
         badtitles.append(title)
         links = temps[i].find('a')['href']
