@@ -118,7 +118,7 @@ def tamilmv():
                 pass
             else:
                 if title.find('span').text.endswith('torrent'):
-                    alltitles.append(title.find('span').text[20:-8])
+                    alltitles.append(title.find('span').text[19:-8])
 
         for p in range(0,len(mag)):
             # print(f"*{alltitles[p]}* -->\n🧲 `{mag[p]}`\n🗒️->[Torrent file]({filelink[p]})")
